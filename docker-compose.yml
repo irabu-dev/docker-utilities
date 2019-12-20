@@ -16,7 +16,7 @@ services:
     websocketserver:
         image: 'centrifugo/centrifugo:v2.2.4'
         container_name: websocketserver
-        restart: unless-stopped->phonename
+        restart: unless-stopped
         tty: true
         environment:
             - CENTRIFUGO_SECRET=${CENTRIFUGO_SECRET}
