@@ -19,9 +19,9 @@ services:
         restart: unless-stopped->phonename
         tty: true
         environment:
-            - CENTRIFUGO_SECRET=irabu
-            - CENTRIFUGO_ADMIN_PASSWORD=irabu
-            - CENTRIFUGO_ADMIN_SECRET=irabu
+            - CENTRIFUGO_SECRET=${CENTRIFUGO_SECRET}
+            - CENTRIFUGO_ADMIN_PASSWORD=${CENTRIFUGO_ADMIN_PASSWORD}
+            - CENTRIFUGO_ADMIN_SECRET=${CENTRIFUGO_ADMIN_SECRET}
         ports:
             - '8800:8000'
         command: centrifugo --config=config.json --admin --debug=true --name="gorocket_1"
